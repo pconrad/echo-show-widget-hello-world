@@ -1,0 +1,16 @@
+This demo adapts the package structure and manifests from:
+https://github.com/alexa-samples/skill-sample-plant-care-widget
+Revision: c6f355cb27c63198dc8a63cdda08295dae0435ee
+
+Upstream notice:
+Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+
+The adapted ask-resources.json and skill-package/ files are distributed
+under the Amazon Software License 1.0 in licenses/Amazon-Software-License.
+Modifications replace Plant Care with a static Hello World widget and remove
+database, remote data binding, and image dependencies from the widget document.
+These adapted files may only be used with Amazon services and platforms,
+as required by section 3.3 of that license.
+
+The original Lambda implementation and tests in this repository are covered
+by the root MIT LICENSE. No upstream backend code or npm dependencies are included.

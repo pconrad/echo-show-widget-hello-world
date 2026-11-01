@@ -1,0 +1,17 @@
+{
+  "name": "echo-show-widget-hello-world",
+  "version": "1.0.0",
+  "description": "Dependency-free voice endpoint for the Hello World Alexa widget",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "check": "node --check index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "private": true,
+  "engines": {
+    "node": ">=18"
+  }
+}
