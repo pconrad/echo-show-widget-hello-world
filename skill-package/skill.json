@@ -1,0 +1,53 @@
+{
+  "manifest": {
+    "manifestVersion": "1.0",
+    "apis": {
+      "custom": {
+        "interfaces": [
+          {
+            "type": "ALEXA_DATASTORE_PACKAGEMANAGER",
+            "packages": [{ "id": "hello-world" }]
+          },
+          { "type": "ALEXA_DATA_STORE" },
+          {
+            "type": "ALEXA_PRESENTATION_APL",
+            "supportedViewports": [
+              {
+                "mode": "HUB",
+                "shape": "RECTANGLE",
+                "minWidth": 960,
+                "maxWidth": 2560,
+                "minHeight": 600,
+                "maxHeight": 2560
+              }
+            ]
+          }
+        ],
+        "locales": {}
+      }
+    },
+    "privacyAndCompliance": {
+      "locales": { "en-US": {} },
+      "allowsPurchases": false,
+      "usesPersonalInfo": false,
+      "isChildDirected": false,
+      "isExportCompliant": true,
+      "containsAds": false
+    },
+    "publishingInformation": {
+      "automaticDistribution": { "isActive": false },
+      "distributionCountries": [],
+      "isAvailableWorldwide": true,
+      "locales": {
+        "en-US": {
+          "name": "Hello World",
+          "summary": "A minimal Hello World widget for Echo Show.",
+          "description": "Display a greeting on your Echo Show home screen. Tap the widget or say Alexa, open hello widget.",
+          "examplePhrases": ["Alexa, open hello widget", "Alexa, ask hello widget to say hello"],
+          "keywords": ["hello", "widget"]
+        }
+      },
+      "testingInstructions": "Enable development testing, install Hello World from the device widget gallery, and tap the greeting."
+    }
+  }
+}
