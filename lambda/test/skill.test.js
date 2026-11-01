@@ -49,7 +49,11 @@ for (const type of [
     'Alexa.DataStore.PackageManager.UsagesInstalled',
     'Alexa.DataStore.PackageManager.UsagesRemoved',
     'Alexa.DataStore.PackageManager.UpdateRequest',
-    'Alexa.DataStore.PackageManager.InstallationError'
+    'Alexa.DataStore.PackageManager.InstallationError',
+    'Alexa.Presentation.APL.RuntimeError',
+    'Alexa.DataStore.Error',
+    'System.ExceptionEncountered',
+    'UnknownSystemNotification'
 ]) {
     test(`acknowledges ${type} without speaking or starting a session`, async () => {
         assert.deepEqual(await handler({ request: { type } }), { version: '1.0', response: {} });

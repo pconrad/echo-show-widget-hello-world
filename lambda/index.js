@@ -5,8 +5,7 @@ exports.handler = async (event) => {
     const response = {};
     let speech;
 
-    if (request.type.startsWith('Alexa.DataStore.PackageManager.')
-        || request.type === 'SessionEndedRequest') {
+    if (!['LaunchRequest', 'IntentRequest', 'Alexa.Presentation.APL.UserEvent'].includes(request.type)) {
         return { version: '1.0', response };
     }
 
