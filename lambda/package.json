@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "node --test test/*.test.js",
-    "check": "node --check index.js"
+    "test:unit": "node --test test/skill.test.js",
+    "test:integration": "node --test test/package.test.js",
+    "check": "node --check index.js && node --check test/skill.test.js && node --check test/package.test.js"
   },
   "keywords": [],
   "author": "",

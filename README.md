@@ -34,6 +34,7 @@ ask-resources.json                       Alexa-hosted deployment type template
 lambda/index.js                         Voice/tap endpoint (index.handler)
 lambda/package.json                     Local check/test commands
 lambda/test/skill.test.js                Built-in Node tests
+lambda/test/package.test.js              Local widget/endpoint integration test
 skill-package/skill.json                 Skill interfaces and widget registration
 skill-package/interactionModels/custom/en-US.json
 skill-package/dataStorePackages/hello-world/
@@ -186,6 +187,28 @@ acknowledgments, and links between the skill, widget manifest, presentation,
 APL document, and data. For local checks in this repository instead, run
 `npm run check` and `npm test` from its `lambda/` directory.
 There is no separate linter or bundler.
+
+### Automated testing
+
+[Test widget demo](.github/workflows/test.yml) runs on pushes, pull requests, and
+manual dispatch using Node.js **22 and 24**. It runs these separately from
+`lambda/`:
+
+```sh
+npm run check             # Syntax-check the backend and test JavaScript
+npm run test:unit         # Request/response behavior, including sessionless events
+npm run test:integration  # Package -> presentation -> document/data -> tap handler
+```
+
+`npm test` runs both test files. No dependency installation, credentials,
+deployment, or access to an Amazon account is required. Actions are pinned to
+commit SHAs, with a read-only token and checkout credential persistence disabled.
+
+The syntax check is not a full style linter; none is configured. A compilation
+job would have nothing to compile. Cloud/device end-to-end testing is deliberately
+**not** automated: the real deployment, gallery installation, rendering, and tap
+checks in steps 4–5 require your account and hardware. The local integration test
+does not validate Amazon's server-side schema or emulate an Echo Show renderer.
 
 ## 4. Deploy the development version
 
